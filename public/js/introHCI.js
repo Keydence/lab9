@@ -10,16 +10,18 @@ function initializePage() {
     $.get('/lab/today', onServerResponse);
 }
 
+
+
 // Function that is called when the server responds to the AJAX call
 function onServerResponse(data){
     var labElementId = getLabElementId(data.id);
     var labElement = $(labElementId);
-    labElement.css({'background': 'yellow'});
+    labElement.css({"background": "yellow"});
 }
 
 
 // Function to format the CSS selector
 function getLabElementId(id){
-    var labElementId = '#lab_' + id;
+    var labElementId = '#lab-' + id;
     return labElementId;
 }
